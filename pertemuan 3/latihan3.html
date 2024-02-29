@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 3</title>
+</head>
+<body>
+
+    <form method="post" action="">
+    <table border="1" align="center" cellpadding="15" width="70%">
+
+        <tbody>
+            <tr>
+                <td><label for="nama">Masukkan Nama: </label></td>
+                <td><input type="text" name="nama" id="nama" placeholder="Masukkan Nama Anda!" size="50" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">Masukkan Email: </label></td>
+                <td><input type="email" name="email" id="email" placeholder="Masukkan Email Anda!" size="50" required></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Gender </label></td>
+                <td>
+                    <input type="radio" name="gender" id="L" value="L"><label for="L">Laki-laki</label> &nbsp;
+                    <input type="radio" name="gender" id="P" value="P"><label for="P">Perempuan</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">Hobby</label></td>
+                <td>
+                    <input type="checkbox" name="hobby" id="futsal" value="futsal"><label for="futsal">Futsal</label> <br>
+                    <input type="checkbox" name="hobby" id="valorant" value="valorant"><label for="valorant">Valorant</label> <br>
+                    <input type="checkbox" name="hobby" id="baca" value="baca"><label for="baca">Baca Buku</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="pendidikan">Pendidikan</label></td>
+                <td>
+                    <select name="" id="pendidikan">
+                        <option value="" selected disabled>-- Pilih Pendidikan --</option>
+                        <option value="sd">Sekolah Dasar</option>
+                        <option value="smp">Sekolah Menengah Pertama</option>
+                        <option value="sma">Sekolah Menengah Atas</option>
+                        <option value="d3">Diploma 3</option>
+                        <option value="s1">Strata 1</option>
+                        <option value="s2">Strata 2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="alamat">Alamat</label></td>
+                <td><textarea name="" id="alamat" cols="50" rows="10"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="">Disabled</label></td>
+                <td><input type="text" name="" id="" disabled></td>
+            </tr>
+        </tbody>
+        <thead bgcolor="aqua">
+            <th colspan="2">Latihan Form</th>
+        </thead>
+        <tfoot bgcolor="gray">
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="submit">Submit</button>
+                    &nbsp;
+                    <button type="reset">Cancel</button>
+                </td>
+            </tr>
+        </tfoot>
+
+    </table>
+    </form>
+</body>
+</html>
