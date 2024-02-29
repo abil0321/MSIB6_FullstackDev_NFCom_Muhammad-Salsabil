@@ -1,0 +1,29 @@
+table {
+  align-items: center;
+  width: 100%;
+}
+td {
+  padding: 20px;
+}
+.tabel_makanan {
+  width: 50%;
+  align-items: center;
+  border: 1px solid black;
+}
+.tabel_makanan td {
+  padding: 20px;
+  border: 1px solid black;
+}
+.tabel_makanan th {
+  padding: 20px;
+  border: 1px solid black;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  color: blue;
+  font-size: larger;
+}
