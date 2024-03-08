@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas JS</title>
+  </head>
+  <body>
+    <table id="employeeTable" border="1px" align="center" cellpadding="10" cellspacing="0" width="80%" style="border: 1px solid black;"></table>
+
+    <script>
+      // Define the employee object
+      const pegawai = "Ridwan"
+      const jabatan = "Manager"
+      const status = "Menikah"
+      let gapok;
+      let tunjanganKeluarga;
+      let totalGaji;
+
+      // Define the base salary based on the employee's job title
+      if (jabatan == "Manager") {
+        gapok = 15000000
+      } else if (jabatan == "Asisten Manager") {
+        gapok = 1000000
+      } else {
+        gapok = 5000000
+      }
+
+
+      // Calculate the salary components based on the base salary
+      let tunjanganJabatan = 0.15 * gapok;
+      let bpjs = 0.1 * gapok
+      tunjanganKeluarga = status == "Menikah" ? 0.2 * gapok : 0;
+      totalGaji = gapok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+
+
+      // Create the table rows for the header, data, and footer
+      const headerRow = `<thead bgcolor="gray"><tr><th>Nama Pegawai</th><th>Jabatan</th><th>Status</th><th>Gaji Pokok</th><th>Tunjangan Jabatan</th><th>BPJS</th><th>Tunjangan Keluarga</th><th>Total Gaji</th></tr></thead>`;
+      const dataRow = `<tbody align="center"><tr><td>${pegawai}</td><td>${jabatan}</td><td>${status}</td><td>${gapok}</td><td>${tunjanganJabatan}</td><td>${bpjs}</td><td>${tunjanganKeluarga}</td><td>${totalGaji}</td></tr></tbody>`;
+      const footerRow = `<tfoot align="center"><tr><td colspan='7'>Total</td><td colspan='1'>${totalGaji}</td></tr></tfoot>`;
+
+      // Combine the rows to create the table
+      const table = `<table>
+                      ${headerRow}
+                      ${dataRow}
+                      ${footerRow}
+                    </table>`;
+
+      // Select the table element and insert the table HTML
+      const employeeTable = document.getElementById("employeeTable");
+      employeeTable.innerHTML = table;
+    </script>
+  </body>
+</html>
