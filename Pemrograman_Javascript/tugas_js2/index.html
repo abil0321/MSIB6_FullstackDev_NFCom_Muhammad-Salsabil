@@ -1,0 +1,99 @@
+<script>
+    var s1 = {
+        nama: "Jamal",
+        nilai: 80,
+    };
+    var s2 = {
+        nama: "Rizka",
+        nilai: 90,
+    };
+    var s3 = {
+        nama: "Adi",
+        nilai: 60,
+    };
+    var s4 = {
+        nama: "Amy",
+        nilai: 50,
+    };
+    var s5 = {
+        nama: "Leo",
+        nilai: 85,
+    };
+
+    let siswa = [s1, s2, s3, s4, s5];
+</script>
+<table
+    border="1"
+    cellpadding="5"
+    cellspacing="0"
+    style="text-align: center; width: 50%; margin: auto"
+>
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Nilai</th>
+            <th>Keterangan</th>
+            <th>Grade</th>
+            <th>Predikat</th>
+        </tr>
+    </thead>
+    <tbody>
+        <script>
+            var no = 1;
+            for (data of siswa) {
+                let ket = data.nilai >= 60 ? "Lulus" : "Gagal";
+                let grade, predikat
+
+                if (data.nilai > 85 && data.nilai <= 100) {
+                    grade = "A";
+                } else if (data.nilai > 75 && data.nilai <= 85) {
+                    grade = "B";
+                } else if (data.nilai >= 60 && data.nilai <= 75) {
+                    grade = "C";
+                } else if (data.nilai > 30 && data.nilai < 60) {
+                    grade = "D";
+                } else if (data.nilai >= 0 && data.nilai <= 30) {
+                    grade = "E";
+                } else {
+                    grade = "";
+                }
+
+                switch (grade) {
+                    case "A":
+                        predikat = "Sempurna";
+                        break;
+                    case "B":
+                        predikat = "Baik";
+                        break;
+                    case "C":
+                        predikat = "Cukup";
+                        break;
+                    case "D":
+                        predikat = "Kurang";
+                        break;
+                    case "E":
+                        predikat = "Buruk";
+                        break;
+
+                    default:
+                        break;
+                }
+
+                document.write(
+                    `
+                    <tr>
+                        <td>${no}</td>
+                        <td>${data.nama}</td>
+                        <td>${data.nilai}</td>
+                        <td>${ket}</td>
+                        <td>${grade}</td>
+                        <td>${predikat}</td>
+                    </tr>
+                    `
+                );
+                no++;
+            }
+        </script>
+    </tbody>
+</table>
