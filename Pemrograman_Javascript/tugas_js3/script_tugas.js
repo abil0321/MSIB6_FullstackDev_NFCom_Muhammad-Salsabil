@@ -8,18 +8,23 @@ function perkenalan() {
   const hobby = form.hobby;
 
   if (nama.value == "") {
-    
-    document.getElementById("val_nama").innerHTML = "Isi Form Nama";
-
-  } else if (pekerjaan.value == "") {
-
-    document.getElementById("val_pek").innerHTML =  "Isi Form Pekerjaan";
-    
-  } else if (hobby.value == "") {
-
-    document.getElementById("val_hob").innerHTML =  "Isi Form Hobby";
-    
+    document.getElementById("val_nama").innerHTML = "Gak kosong juga Namanya!";
   } else {
+    document.getElementById("val_nama").innerHTML = "";
+  }
+
+  if (pekerjaan.value == "") {
+    document.getElementById("val_pek").innerHTML = "Gak kosong juga Pekerjaan!";
+  } else {
+    document.getElementById("val_pek").innerHTML = "";
+  }
+
+  if (hobby.value == "") {
+    document.getElementById("val_hob").innerHTML = "Gak kosong juga Hobby!";
+  } else {
+    document.getElementById("val_hob").innerHTML = "";
+
+  } if (nama.value && pekerjaan.value && hobby.value) {
 
     document.getElementById("namaR").innerHTML = nama.value;
     document.getElementById("pekR").innerHTML = pekerjaan.value;
