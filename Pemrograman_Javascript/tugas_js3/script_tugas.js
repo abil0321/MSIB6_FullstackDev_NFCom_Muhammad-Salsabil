@@ -1,6 +1,5 @@
 function perkenalan() {
   // Prevent the form from submitting and refreshing the page
-  event.preventDefault();
 
   const form = document.getElementById("form");
   const nama = form.nama;
