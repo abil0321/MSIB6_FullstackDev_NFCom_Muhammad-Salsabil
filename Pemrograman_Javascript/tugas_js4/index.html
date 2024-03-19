@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas Javascript 4</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 0 auto;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+      }
+      thead th {
+        background-color: gray;
+      }
+      form {
+        width: 50%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      input[type="text"],
+      select {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+        padding: 5px;
+      }
+      input[type="submit"] {
+        flex-basis: 100%;
+        padding: 5px;
+        background-color: blue;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      #employeeForm{
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 align="center">Tugas Javascript 4</h1>
+
+    <form id="employeeForm">
+      <label for="pegawai">Nama Pegawai:</label>
+      <input type="text" id="pegawai" name="pegawai" required /><br />
+
+      <label for="jabatan">Jabatan:</label>
+      <select id="jabatan" name="jabatan" required>
+        <option value="Manager">Manager</option>
+        <option value="Asisten Manager">Asisten Manager</option>
+        <option value="Staff">Staff</option></select
+      ><br />
+
+      <label for="status">Status:</label>
+      <select id="status" name="status" required>
+        <option value="Menikah">Menikah</option>
+        <option value="Belum Menikah">Belum Menikah</option></select
+      ><br />
+
+      <input type="submit" value="Hitung Gaji" />
+    </form>
+
+    <table
+      id="employeeTable"
+      border="1px"
+      align="center"
+      cellpadding="10"
+      cellspacing="0"
+      width="80%"
+      style="border: 1px solid black"
+    ></table>
+
+    <script src="script_tugas4.js"></script>
+  </body>
+</html>

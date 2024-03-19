@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Input Pegawai</title>
+    <style>
+      table {
+        width: 80%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+      }
+      th {
+        background-color: gray;
+      }
+
+      form {
+        width: 50%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+      input[type="text"],
+      select {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+        padding: 5px;
+      }
+      input[type="submit"] {
+        flex-basis: 100%;
+        padding: 5px;
+        background-color: blue;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button {
+        flex-basis: 100%;
+        padding: 5px;
+        background-color: blue;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Form Input Pegawai</h2>
+
+    <form id="form-pegawai">
+      <label for="nama">Nama Pegawai:</label>
+      <input type="text" id="nama" name="nama" required /><br />
+      <label for="jabatan">Jabatan:</label>
+      <select id="jabatan" name="jabatan" required>
+        <option value="Manager">Manager</option>
+        <option value="Asisten Manager">Asisten Manager</option>
+        <option value="Staff">Staff</option></select
+      ><br />
+      <label for="status">Status:</label>
+      <select id="status" name="status" required>
+        <option value="menikah">Menikah</option>
+        <option value="belum">Belum</option></select
+      ><br />
+      <button type="submit">Hitung Gaji</button>
+    </form>
+    <!-- <h2>Data Pegawai</h2> -->
+    <div style="display: flex; justify-content: center">
+      <table id="tabel-pegawai">
+        <thead>
+          <tr>
+            <th>Nama Pegawai</th>
+            <th>Jabatan</th>
+            <th>Status</th>
+            <th>Gaji Pokok</th>
+            <th>Tunjangan Jabatan</th>
+            <th>BPJS</th>
+            <th>Tunjangan Keluarga</th>
+            <th>Total Gaji</th>
+          </tr>
+        </thead>
+        <tbody id="data-pegawai"></tbody>
+        <tfoot>
+          <tr>
+            <!-- <td colspan="7" id="total-gaji">Total Gaji: Rp. 0</td> -->
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <script src="tugas4.js"></script>
+  </body>
+</html>
