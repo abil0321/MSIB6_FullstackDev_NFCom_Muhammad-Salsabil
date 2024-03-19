@@ -75,7 +75,7 @@ function displayTable(data) {
   const footerRow = `<tfoot align="center">
         <tr>
             <th colspan='7'>Total</th>
-            <th colspan='1'>${data.totalGaji.toLocaleString("id-ID", {
+            <th colspan='1' style="background-color: yellow">${data.totalGaji.toLocaleString("id-ID", {
               style: "currency",
               currency: "IDR",
             })}</th>
