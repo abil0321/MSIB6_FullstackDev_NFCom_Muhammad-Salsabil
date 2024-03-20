@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handler</title>
+    <link rel="stylesheet" href="css/style1.css" />
+
+    <!-- ... suara ... -->
+    <audio id="anj-sound" preload="auto" src="suara/anj.mp3"></audio>
+    <audio id="cat-sound" src="suara/kucing.mp3"></audio>
+    <audio id="bur-sound" src="suara/burung.mp3"></audio>
+  </head>
+  <body>
+    <div id="div1">Hewan Anjing</div>
+    <div id="div2">Hewan Kucing</div>
+    <div id="div3">Hewan Burung</div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+      $("document").ready(function () {
+        $("#div1").mouseover(function () {
+          const anjSound = $("#anj-sound")[0];
+          anjSound.play();
+          $(this).css({
+            background:
+              "url('https://th.bing.com/th/id/OIP.Mn36OyD-SzLYBCst7tOaPgHaGT?rs=1&pid=ImgDetMain')",
+          });
+        });
+
+        $("#div1").mouseout(function () {
+          $(this).css({
+            background: "black",
+          });
+          const anjSound = $("#anj-sound")[0];
+          anjSound.pause();
+          anjSound.currentTime = 0;
+        });
+
+        $("#div2").mouseover(function () {
+          const catSound = $("#cat-sound")[0];
+          catSound.play();
+          $(this).css({
+            background:
+              "url('https://main.mobile.doss.co.id/storage/uploads/2022/02/photo-1518791841217-8f162f1e1131.webp')",
+          });
+        });
+
+        $("#div2").mouseout(function () {
+          $(this).css({
+            background: "red",
+          });
+          const catSound = $("#cat-sound")[0];
+          catSound.pause();
+          catSound.currentTime = 0;
+        });
+
+        $("#div3").mouseover(function () {
+          const burSound = $("#bur-sound")[0];
+          burSound.play();
+          $(this).css({
+            background:
+              "url('https://downloadwap.com/thumbs2/wallpapers/p2ls/26/animals/UVlsvrPr.jpg')",
+          });
+        });
+
+        $("#div3").mouseout(function () {
+          $(this).css({
+            background: "blue",
+          });
+          const burSound = $("#bur-sound")[0];
+          burSound.pause();
+          burSound.currentTime = 0;
+        });
+      });
+    </script>
+  </body>
+</html>
