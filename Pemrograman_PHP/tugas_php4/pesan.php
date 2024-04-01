@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h2 style="text-align: center;" class="mb-4">Beli Barang</h2>
         <div class="row">
             <div class="col">
-                <form id="purchaseForm" method="post" action="tugas.php">
+                <form id="purchaseForm" method="post" action="index.php?hal=pesan">
                     <!-- <label for="customerName">Nama Pelanggan:</label>
                     <input type="text" id="customerName" name="customerName" required> -->
 
@@ -60,14 +60,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
 
                     <div class="form-group">
-                    <label for="customerName">Jenis Produk:</label>
+                        <label for="customerName">Jenis Produk:</label>
                         <select id="product" name="product" required>
                             <option value="ayam">Ayam</option>
                             <option value="lele">Lele</option>
                             <option value="bebek">Bebek</option>
                             <option value="bandeng">Bandeng</option>
                         </select>
-                        
+
                     </div>
 
                     <!-- <label for="quantity">Jumlah Beli:</label>
