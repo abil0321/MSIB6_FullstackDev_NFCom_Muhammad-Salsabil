@@ -10,40 +10,12 @@
 </head>
 
 <body class="px-5">
-    <script>
-        $(document).ready(function() {
-            $("#clear").click(function() {
-                $("#nim").val("");
-                $("#nama").val("");
-                $("#kuliah").val("");
-                $("#mata_kuliah").val("");
-                $("#nilai").val("");
-                // $("#result").hide();
-
-                $("#result").fadeOut(500)
-            });
-            <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                echo "$('#result').show();";
-                require_once 'Mahasiswa.php';
-
-                $nim = $_POST['nim'];
-                $nama = $_POST['nama'];
-                $kuliah = $_POST['kuliah'];
-                $mata_kuliah = $_POST['mata_kuliah'];
-                $nilai = $_POST['nilai'];
-
-                $ns1 = new Mahasiswa($nim, $nama, $kuliah, $mata_kuliah, $nilai);
-            }
-            ?>
-        });
-    </script>
 
     <div class="container">
-        <h1 class="text-center my-4">Form Input Mahasiswa</h1>
+        <h1 class="text-center my-4">Hasil Nilai Mahasiswa</h1>
         <div class="row">
             <div class="col">
-                <form style="width: 80%;" action="objMahasiswa.php" method="post">
+                <form style="width: 80%;" action="Hasil.php" method="post">
                     <div class="form-group mb-3">
                         <label for="nim" class="form-label">NIM</label>
                         <input class="form-control" type="text" name="nim" id="nim" required aria-describedby="nimHelp">
@@ -84,33 +56,6 @@
 
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-            </div>
-
-            <div class='col' style="display:none;" id="result">
-                <div class='card border-success mb-3' style='max-width: 100%;'>
-                    <div class='card-header text-bg-success border-success'><b>Result</b></div>
-                    <div class='card-body text-success'>
-                        <h5 class='card-title mb-3'><?php echo $ns1->nama ?></h5>
-
-                        <div class='card mb-3' style='width: 80%;'>
-                            <ul class='list-group list-group-flush'>
-                                <li class='list-group-item'>NIM: <?php echo $ns1->nim; ?></li>
-                                <li class='list-group-item'>Kuliah: <?php echo $ns1->kuliah; ?></li>
-                                <li class='list-group-item'>Mata Kuliah: <?php echo $ns1->mata_kuliah; ?></li>
-                                <li class='list-group-item'>Nilai: <?php echo $ns1->nilai; ?></li>
-                                <li class='list-group-item'>Status: <?php echo $ns1->getStatus(); ?></li>
-                                <li class='list-group-item'>Grade: <?php echo $ns1->getGrade(); ?></li>
-                                <li class='list-group-item'>Predikat: <?php echo $ns1->getPredikat(); ?></li>
-                            </ul>
-                        </div>
-
-                        <p class='card-text'>"<i>atas nama <?php echo $ns1->nama; ?> Lulus dengan nilai <?php echo $ns1->nilai; ?> dengan grade <b><?php echo $ns1->getGrade(); ?></b> di mata-kuliah <?php echo $ns1->mata_kuliah; ?></i>"</p>
-                    </div>
-
-                    <button type="button" class="btn btn-success mb-3" style="width: 50%; margin-left: 25%;" id="clear">Clear</button>
-                    <div class='card-footer bg-transparent border-success text-center text-secondary'>Copyright by @Muhammad Salsabil - 2024</div>
-                </div>
-
             </div>
 
         </div>
