@@ -35,6 +35,8 @@ class Mahasiswa
             return "C";
         } elseif ($this->nilai >= 60) {
             return "D";
+        }else{
+            return "E";
         }
     }
 
@@ -48,6 +50,8 @@ class Mahasiswa
             return "Cukup";
         } elseif ($this->nilai >= 60) {
             return "Kurang";
+        }else{
+            return "Sangat Kurang";
         }
     }
 }
