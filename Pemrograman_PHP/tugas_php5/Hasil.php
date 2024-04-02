@@ -12,14 +12,6 @@
 <body>
     <script>
         $(document).ready(function() {
-            $("#clear").click(function() {
-                $("#nim").val("");
-                $("#nama").val("");
-                $("#kuliah").val("");
-                $("#mata_kuliah").val("");
-                $("#nilai").val("");
-                $("#result").hide();
-            });
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "$('#result').fadeIn(500);";
@@ -31,9 +23,17 @@
                 $mata_kuliah = $_POST['mata_kuliah'];
                 $nilai = $_POST['nilai'];
 
+
                 $ns1 = new Mahasiswa($nim, $nama, $kuliah, $mata_kuliah, $nilai);
             }
             ?>
+
+            $('#back').click(function(e) {
+                e.preventDefault(); // Mencegah tindakan default tombol
+                $('#result').fadeOut(500, function() { // Menambahkan efek fadeout sebelum halaman dimuat ulang
+                    window.location.href = 'objMahasiswa.php'; // Memuat ulang halaman setelah animasi selesai
+                });
+            });
         });
     </script>
 
@@ -42,9 +42,10 @@
 
         <div class="row" style="display:none;" id="result">
             <div class="col">
-            <a href="objMahasiswa.php" type="button" class="btn btn-primary mb-3" style="width: 15%; margin-left: 0;" id="back"><< Back</a>
+                <a href="objMahasiswa.php" type="button" class="btn btn-primary mb-3" style="width: 15%;" id="back">
+                    << Back</a>
 
-            <table class="table table-bordered border-success">
+                        <table class="table table-bordered border-success">
                             <thead class="table-dark">
                                 <tr style="color: white;">
                                     <th scope="col">NIM</th>
