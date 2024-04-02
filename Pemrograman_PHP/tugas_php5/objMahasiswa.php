@@ -12,7 +12,7 @@
 <body class="px-5">
 
     <div class="container">
-        <h1 class="text-center my-4">Hasil Nilai Mahasiswa</h1>
+        <h1 class="text-center my-4">Form Nilai Mahasiswa</h1>
         <div class="row">
             <div class="col">
                 <form style="width: 80%;" action="Hasil.php" method="post">

@@ -40,9 +40,9 @@
     <div class="container">
         <h1 class="text-center my-4">Nilai Mahasiswa</h1>
 
-        <div class="row">
+        <div class="row" style="display:none;" id="result">
             <div class="col">
-            <a href="objMahasiswa.php" type="button" class="btn btn-success mb-3" style="width: 15%; margin-left: 0;" id="back"><< Back</a>
+            <a href="objMahasiswa.php" type="button" class="btn btn-primary mb-3" style="width: 15%; margin-left: 0;" id="back"><< Back</a>
 
             <table class="table table-bordered border-success">
                             <thead class="table-dark">
