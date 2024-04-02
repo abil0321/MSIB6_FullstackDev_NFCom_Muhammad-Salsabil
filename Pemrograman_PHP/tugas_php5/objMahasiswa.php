@@ -100,11 +100,11 @@
                                 <li class='list-group-item'>Nilai: <?php echo $ns1->nilai; ?></li>
                                 <li class='list-group-item'>Status: <?php echo $ns1->getStatus(); ?></li>
                                 <li class='list-group-item'>Grade: <?php echo $ns1->getGrade(); ?></li>
-                                <li class='list-group-item'>Grade: <?php echo $ns1->getPredikat(); ?></li>
+                                <li class='list-group-item'>Predikat: <?php echo $ns1->getPredikat(); ?></li>
                             </ul>
                         </div>
 
-                        <p class='card-text'>Siswa atas nama <?php echo $ns1->nama; ?> Lulus dengan nilai <?php echo $ns1->nilai; ?> dengan predikat <b><?php echo $ns1->getPredikat(); ?></b> di mata-kuliah <?php echo $ns1->mata_kuliah; ?></p>
+                        <p class='card-text'>"<i>atas nama <?php echo $ns1->nama; ?> Lulus dengan nilai <?php echo $ns1->nilai; ?> dengan grade <b><?php echo $ns1->getGrade(); ?></b> di mata-kuliah <?php echo $ns1->mata_kuliah; ?></i>"</p>
                     </div>
 
                     <button type="button" class="btn btn-success mb-3" style="width: 50%; margin-left: 25%;" id="clear">Clear</button>
