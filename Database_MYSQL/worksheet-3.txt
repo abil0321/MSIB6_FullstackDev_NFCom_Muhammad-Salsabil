@@ -396,22 +396,23 @@ MariaDB [dbpos_sib6]> SELECT * FROM produk WHERE harga_jual > (SELECT AVG(harga_
 15 rows in set (0.001 sec)
 
 5.	Tampilkan data pelanggan yang memiliki kartu dimana iuran tahunan kartu diatas 90rb
-MariaDB [dbpos_sib6]> SELECT * FROM pelanggan
+MariaDB [dbpos_sib6]> SELECT pelanggan.*, kartu.iuran
+    -> FROM pelanggan
     -> JOIN kartu ON pelanggan.kartu_id = kartu.id
-    -> WHERE kartu.iuran> 90000;
-+----+-------+--------------------+----+------------+------------+-------------------+----------+----+------+---------------+--------+--------+
-| id | kode  | nama               | jk | tmp_lahir  | tgl_lahir  | email             | kartu_id | id | kode | nama          | diskon | iuran  |
-+----+-------+--------------------+----+------------+------------+-------------------+----------+----+------+---------------+--------+--------+
-|  1 | C001  | Agung Sedayu Group | L  | Solo       | 2010-01-01 | sedayu@gmail.com  |        1 |  1 | GOLD | Gold Utama    |   0.05 | 100000 |
-|  2 | C002  | Pandan Wangi       | P  | Yogyakarta | 1950-01-01 | wangi@gmail.com   |        2 |  2 | PLAT | Platinum Jaya |    0.1 | 150000 |
-|  3 | C003  | Sekar Mirah        | P  | Kediri     | 1983-02-20 | mirah@yahoo.com   |        1 |  1 | GOLD | Gold Utama    |   0.05 | 100000 |
-|  5 | C005  | Pradabashu         | L  | Pati       | 1985-04-02 | prada85@gmail.com |        2 |  2 | PLAT | Platinum Jaya |    0.1 | 150000 |
-|  6 | C006  | Gayatri Dwi        | P  | Jakarta    | 1987-11-28 | gaya87@gmail.com  |        1 |  1 | GOLD | Gold Utama    |   0.05 | 100000 |
-|  7 | C007  | Dewi Gyat          | P  | Jakarta    | 1988-12-01 | giyat@gmail.com   |        1 |  1 | GOLD | Gold Utama    |   0.05 | 100000 |
-| 10 | C010  | Cassanndra         | P  | Belfast    | 1990-11-20 | casa90@gmail.com  |        1 |  1 | GOLD | Gold Utama    |   0.05 | 100000 |
-| 11 | K0010 | Andi Wijaya        | L  | Tangerang  | 2023-08-07 | andi@gmail.com    |        2 |  2 | PLAT | Platinum Jaya |    0.1 | 150000 |
-+----+-------+--------------------+----+------------+------------+-------------------+----------+----+------+---------------+--------+--------+
-8 rows in set (0.000 sec)
+    -> WHERE kartu.iuran > 90000;
++----+-------+--------------------+----+------------+------------+-------------------+----------+--------+
+| id | kode  | nama               | jk | tmp_lahir  | tgl_lahir  | email             | kartu_id | iuran  |
++----+-------+--------------------+----+------------+------------+-------------------+----------+--------+
+|  1 | C001  | Agung Sedayu Group | L  | Solo       | 2010-01-01 | sedayu@gmail.com  |        1 | 100000 |
+|  2 | C002  | Pandan Wangi       | P  | Yogyakarta | 1950-01-01 | wangi@gmail.com   |        2 | 150000 |
+|  3 | C003  | Sekar Mirah        | P  | Kediri     | 1983-02-20 | mirah@yahoo.com   |        1 | 100000 |
+|  5 | C005  | Pradabashu         | L  | Pati       | 1985-04-02 | prada85@gmail.com |        2 | 150000 |
+|  6 | C006  | Gayatri Dwi        | P  | Jakarta    | 1987-11-28 | gaya87@gmail.com  |        1 | 100000 |
+|  7 | C007  | Dewi Gyat          | P  | Jakarta    | 1988-12-01 | giyat@gmail.com   |        1 | 100000 |
+| 10 | C010  | Cassanndra         | P  | Belfast    | 1990-11-20 | casa90@gmail.com  |        1 | 100000 |
+| 11 | K0010 | Andi Wijaya        | L  | Tangerang  | 2023-08-07 | andi@gmail.com    |        2 | 150000 |
++----+-------+--------------------+----+------------+------------+-------------------+----------+--------+
+8 rows in set (0.003 sec)
 
 6.	Tampilkan statistik data produk dimana harga produknya dibawah rata-rata harga produk secara keseluruhan
 MariaDB [dbpos_sib6]> SELECT * FROM produk WHERE harga_jual < (SELECT AVG(harga_jual) FROM produk);
